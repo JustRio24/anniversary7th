@@ -3,14 +3,35 @@
 import { motion } from "framer-motion";
 import { FaHeart, FaArrowDown } from "react-icons/fa";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const HeroSection = () => {
+  const [windowSize, setWindowSize] = useState({ width: 1200, height: 800 });
+
+  useEffect(() => {
+    // Set window size after component mounts
+    setWindowSize({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const scrollToNext = () => {
     document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <div className="min-h-screen mt-14 flex items-center justify-center relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (
@@ -21,8 +42,8 @@ const HeroSection = () => {
             animate={{
               opacity: [0, 1, 0],
               scale: [0, 1, 0],
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * windowSize.width,
+              y: Math.random() * windowSize.height,
             }}
             transition={{
               duration: 3,
@@ -36,7 +57,7 @@ const HeroSection = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-4 text-center relative z-10">
+      <div className="container mt-16 mx-auto px-4 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
