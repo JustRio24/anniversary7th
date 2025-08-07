@@ -33,7 +33,6 @@ Aku berjanji akan terus mencintaimu, hari ini, besok, dan selamanya.
 
 Dengan cinta yang tak terbatas,
 Kekasih Hatimu ♥`;
-
   useEffect(() => {
     if (isInView && currentIndex < letterText.length) {
       const timer = setTimeout(() => {

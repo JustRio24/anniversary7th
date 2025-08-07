@@ -106,39 +106,6 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="flex justify-center space-x-6 mb-8"
-          >
-            <motion.a
-              href="#"
-              whileHover={{ scale: 1.2, rotate: 5 }}
-              whileTap={{ scale: 0.9 }}
-              className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-200"
-            >
-              <FaInstagram className="text-xl" />
-            </motion.a>
-            <motion.a
-              href="#"
-              whileHover={{ scale: 1.2, rotate: -5 }}
-              whileTap={{ scale: 0.9 }}
-              className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-200"
-            >
-              <FaTwitter className="text-xl" />
-            </motion.a>
-            <motion.a
-              href="#"
-              whileHover={{ scale: 1.2, rotate: 5 }}
-              whileTap={{ scale: 0.9 }}
-              className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-200"
-            >
-              <FaEnvelope className="text-xl" />
-            </motion.a>
-          </motion.div>
-
           {/* Copyright */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -150,10 +117,7 @@ const Footer = () => {
               Made with ♥ for our 7th Anniversary
             </p>
             <p className="text-sm text-blue-200 opacity-80">
-              © 2025 Our Love Story • Built with Next.js & TailwindCSS
-            </p>
-            <p className="text-xs text-purple-300 opacity-60 mt-2">
-              Ready to deploy on Vercel ✨
+              © 2025 Our Love Story
             </p>
           </motion.div>
         </motion.div>
